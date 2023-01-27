@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import "fonts.css";
+@import "modal.css";
 
 *{
     margin: 0;
@@ -118,6 +119,24 @@ a{
     line-height: 63px;
     text-align: right;
     margin-top: 95px;
+}
+
+.preview{
+    position: relative;
+}
+
+.preview .play-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    max-width: 150px;
+    z-index: 5;
+}
+
+.preview .play-btn ing{
+    max-width: 100%;
 }
 
 .preview__video{
@@ -240,7 +259,11 @@ a{
     opacity: .6;
 }
 
-/*clip-path: polygon(79.3975% 100%,79.3975% 100%,79.3975% 10*/
+.vjs-big-play-button{
+    top: 50%!important;
+    left: 50% !important;
+    transform: translate(-50%) !important;
+}
 
 @keyframes fade-slide {
     0% {
