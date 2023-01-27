@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
+
     function openModal(modalSelector) {
         modalSelector.style.display = 'block';
         document.body.style.overflow = 'hidden';
@@ -21,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function modal(modalSelector, modalTriggerSelector) {
         const modal = document.querySelector(modalSelector);
         const modalBtn = document.querySelectorAll(modalTriggerSelector);
-        console.log(modalBtn)
 
         modalBtn.forEach(trigger => {
             trigger.addEventListener('click', () => {
