@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'BerlingskeSerif';
+    font-weight: 300;
+    font-display: swap;
+    src: url('../fonts/BerlingskeSerif-Lt.eot'); /* IE 9 Compatibility Mode */
+    src: url('../fonts/BerlingskeSerif-Lt.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+    url('../fonts/BerlingskeSerif-Lt.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+    url('../fonts/BerlingskeSerif-Lt.ttf') format('truetype');/* Safari, Android, iOS */
+}
