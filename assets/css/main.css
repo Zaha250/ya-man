@@ -57,7 +57,8 @@ a{
 .main-section{
     position: relative;
     height: 871px;
-    animation: fade-slide 8s ease-in 5s infinite alternate;
+    transition: background .2s ease-in;
+    /*animation: fade-slide 8s ease-in 5s infinite alternate;*/
 }
 
 .slider-wrapper{
@@ -127,7 +128,8 @@ a{
         flex-direction: column;
         justify-content: space-between;
         background: #000;
-        padding-top: 54px;
+        margin-top: 54px;
+        padding-bottom: 50px;
         height: 100vh;
         transition: background .2s ease-in;
         /*animation: fade-slide-mobile 9s ease-in forwards infinite;*/
@@ -147,6 +149,7 @@ a{
         position: relative;
         max-height: 340px;
         height: 100%;
+        transform: translateY(50px);
     }
 
     .slider-wrapper-mobile img{

@@ -5,16 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
-            allowTouchMove: false
+            allowTouchMove: false,
+            noSwiping: false
         }
     });
 
     function animationBG() {
-        const animBG = document.querySelector('.main-section-mobile');
+        const animMobileBG = document.querySelector('.main-section-mobile');
+        const animBG = document.querySelector('.main-section');
         const variants = [
-            'url("./assets/images/index-cover-bg_1-mobile.png") no-repeat center / cover',
-            'url("./assets/images/index-cover-bg_3-mobile.png") no-repeat center / cover',
-            'url("./assets/images/index-cover-bg_2-mobile.png") no-repeat center / cover',
+            '#000 url("./assets/images/index-cover-bg_1_v2.jpg") no-repeat center / cover',
+            '#000 url("./assets/images/index-cover-bg_3_v2.jpg") no-repeat center / cover',
+            '#000 url("./assets/images/index-cover-bg_2_v2.jpg") no-repeat center / cover',
+        ];
+        const variantsMobile = [
+            '#000 url("./assets/images/index-cover-bg_3-mobile.jpg") no-repeat center / cover',
+            '#000 url("./assets/images/index-cover-bg_2-mobile.jpg") no-repeat center / cover',
+            '#000 url("./assets/images/index-cover-bg_1-mobile.jpg") no-repeat center / cover',
         ];
         let count = 0;
 
@@ -23,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 count = 0;
             }
             animBG.style.background = variants[count];
+            animMobileBG.style.background = variantsMobile[count];
             count++;
         }, 4000);
     }
