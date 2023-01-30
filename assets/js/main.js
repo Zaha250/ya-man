@@ -13,24 +13,34 @@ document.addEventListener('DOMContentLoaded', () => {
     function animationBG() {
         const animMobileBG = document.querySelector('.main-section-mobile');
         const animBG = document.querySelector('.main-section');
-        const variants = [
-            '#000 url("./assets/images/index-cover-bg_1_v2.jpg") no-repeat center / cover',
-            '#000 url("./assets/images/index-cover-bg_3_v2.jpg") no-repeat center / cover',
-            '#000 url("./assets/images/index-cover-bg_2_v2.jpg") no-repeat center / cover',
-        ];
-        const variantsMobile = [
-            '#000 url("./assets/images/index-cover-bg_3-mobile.jpg") no-repeat center / cover',
-            '#000 url("./assets/images/index-cover-bg_2-mobile.jpg") no-repeat center / cover',
-            '#000 url("./assets/images/index-cover-bg_1-mobile.jpg") no-repeat center / cover',
-        ];
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+        let variants = [];
+
+        if(!isMobile) {
+            variants = [
+                '#000 url("./assets/images/index-cover-bg_1_v2.jpg") no-repeat center / cover',
+                '#000 url("./assets/images/index-cover-bg_3_v2.jpg") no-repeat center / cover',
+                '#000 url("./assets/images/index-cover-bg_2_v2.jpg") no-repeat center / cover',
+            ]
+        } else {
+            variants = [
+                '#000 url("./assets/images/index-cover-bg_3-mobile.jpg") no-repeat center / cover',
+                '#000 url("./assets/images/index-cover-bg_2-mobile.jpg") no-repeat center / cover',
+                '#000 url("./assets/images/index-cover-bg_1-mobile.jpg") no-repeat center / cover',
+            ]
+        }
         let count = 0;
 
         setInterval(() => {
             if(count > variants.length - 1) {
                 count = 0;
             }
-            animBG.style.background = variants[count];
-            animMobileBG.style.background = variantsMobile[count];
+            if(!isMobile) {
+                animBG.style.background = variants[count];
+            } else {
+                animMobileBG.style.background = variants[count];
+            }
             count++;
         }, 4000);
     }
