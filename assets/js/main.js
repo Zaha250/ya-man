@@ -4,11 +4,29 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: true,
         autoplay: {
             delay: 3000,
-            disableOnInteraction: false
+            disableOnInteraction: false,
+            allowTouchMove: false
         }
     });
 
+    function animationBG() {
+        const animBG = document.querySelector('.main-section-mobile');
+        const variants = [
+            'url("./assets/images/index-cover-bg_1-mobile.png") no-repeat center / cover',
+            'url("./assets/images/index-cover-bg_3-mobile.png") no-repeat center / cover',
+            'url("./assets/images/index-cover-bg_2-mobile.png") no-repeat center / cover',
+        ];
+        let count = 0;
 
+        setInterval(() => {
+            if(count > variants.length - 1) {
+                count = 0;
+            }
+            animBG.style.background = variants[count];
+            count++;
+        }, 4000);
+    }
+    animationBG();
 
     function openModal(modalSelector) {
         modalSelector.style.display = 'block';
